@@ -1,0 +1,73 @@
+{
+    "README.md": {
+        "description": "README with basic documentation and 'how to run' guide"
+    },
+    ".gitignore": {
+        "description": ".gitignore with node-modules and cache files"
+    },
+    "package.json": {
+        "description": "Package file with project dependencies"
+    },
+    "index.html": {
+        "description": "Index file for React application"
+    },
+    "src/index.js": {
+        "description": "Main entry point for the React application",
+        "dependencies": {
+            "src/components/NotesList.js": [
+                "NotesList"
+            ],
+            "src/components/NoteEditor.js": [
+                "NoteEditor"
+            ],
+            "src/context/NoteContext.js": [
+                "NoteContext"
+            ]
+        }
+    },
+    "src/components/NotesList.js": {
+        "description": "Component to display list of notes",
+        "dependencies": {
+            "src/context/NoteContext.js": [
+                "useNotes"
+            ]
+        },
+        "exposes": [
+            "NotesList"
+        ]
+    },
+    "src/components/NoteEditor.js": {
+        "description": "Component to edit individual notes",
+        "dependencies": {
+            "src/context/NoteContext.js": [
+                "useNotes",
+                "updateNote"
+            ]
+        },
+        "exposes": [
+            "NoteEditor"
+        ]
+    },
+    "src/context/NoteContext.js": {
+        "description": "Context to manage notes data",
+        "dependencies": {
+            "src/data/notes.js": [
+                "notesData"
+            ]
+        },
+        "exposes": [
+            "NoteContext",
+            "useNotes",
+            "updateNote"
+        ]
+    },
+    "src/data/notes.js": {
+        "description": "Hard-coded notes data",
+        "exposes": [
+            "notesData"
+        ]
+    },
+    "public/index.html": {
+        "description": "HTML file for React application"
+    }
+}
